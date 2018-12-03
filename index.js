@@ -13,7 +13,7 @@ module.exports = (app = {}, config = {}) => {
     app.Passport = async function(req, res, next){
       let theToken = req.headers.token;
       if(theToken){
-        let userData = Token.checkToken(theToken);
+        let userData = new Token().checkToken(theToken);
         if(userData){
           let cacheToken = await Redis.getValue(userData.uid);
           if(theToken === cacheToken){
@@ -29,6 +29,7 @@ module.exports = (app = {}, config = {}) => {
         res.print(error('token参数不能为空'));
       }
     };
+    if(app.addAppProp) app.addAppProp('Passport', app.Passport);
   }else{
     console.warn('Not find redis in passport plugin');
   }
