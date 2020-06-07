@@ -1,6 +1,6 @@
 {
   "name": "wood-passport",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/jlego/wood-passport#readme",
   "dependencies": {
-    "wood-token": "^1.0.2"
+    "wood-token": "^1.0.4"
   }
 }
